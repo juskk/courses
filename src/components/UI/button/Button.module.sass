@@ -1,0 +1,39 @@
+.Button
+    padding: 7px
+    margin: 10px auto
+    max-width: 150px
+    width: 100%
+    border-radius: 20px
+    font-size: 15px
+    font-weight: 600
+    color: black
+    cursor: pointer
+    transition: .4s border
+    transition: .4s background-color
+
+.Disabled
+    color: #ccc
+    border: 2px solid #ccc
+    cursor: not-allowed
+    
+
+.True
+    border: 2px solid #a3fdc1
+    background-color: #ebfff3
+.True:hover
+    border: 2px solid #29ff70
+    background-color: #dbffe8
+.False
+    border: 2px solid #ffb9b9
+    background-color: #ffe9e9
+.False:hover
+    border: 2px solid #ff5555
+    background-color: #ffe1e1
+
+
+@keyframes clicked
+    0%
+        transform: translateY(20%)
+    100%
+        transform: translateY(0)
+        

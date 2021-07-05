@@ -1,0 +1,71 @@
+.Header
+    background-color: #000000
+    max-width: 90%
+    width: 100%
+    margin: 0 auto
+    box-shadow: 0px 3px 3px #000000
+.Container
+    max-width: 1350px
+    width: 100%
+    margin: 0 auto
+    height: 50px
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+.HeaderImg
+    font-size: 37px
+    font-weight: 1000
+    color: white
+    margin-right: 40px
+    margin-bottom: 7px
+    text-transform: uppercase
+
+
+.HeaderPart
+    padding: 0 40px
+    display: flex
+    align-items: center
+    height: 100%
+
+.HeaderLink
+    color: white
+    text-transform: uppercase
+    text-decoration: none   
+    margin: 0 10px
+    transition: .4s 
+    cursor: pointer
+    font-weight: 700
+
+.HeaderLink:hover
+    color: #f6e2ff
+
+.ModalDiv
+    position: relative
+    max-width: 90%
+    width: 100%
+    margin: 0 auto
+    border: 1px solid black
+    display: flex
+    flex-direction: column
+    justify-content: center
+
+.PartDiv
+    position: relative
+    margin: 10px 0
+    
+
+.PartText
+    position: absolute
+    top: -15%
+    left: 26%
+    font-size: 13px
+
+
+@media (max-width: 1200px)
+    .Header
+        max-width: 100%
+
+@media (max-width: 600px)
+    .Header
+        display: none
