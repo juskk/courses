@@ -23,6 +23,14 @@
     border: 3px solid #ccc
     box-shadow: 0 0 10px 5px #c9c9c9
 
+.SelectedCourseInfo
+    max-width: 80% 
+    width: 100% 
+    margin: 0 auto
+    margin-top: 50px
+    max-height: 80%
+    height: 100%
+
 .Courses
     position: relative
     float: right
@@ -52,4 +60,54 @@
 @media (max-width: 1150px)
     .SelectedCourse
         max-width: 300px
+
+@media (max-width: 950px)
+    .SelectedCourse
+        max-width: 250px
+@media screen and ( max-width: 800px )
+    .CoursesPage
+        max-width: 90%
+        width: 100%
+        display: flex
+        flex-direction: column
+        align-items: center
+    .Title
+        display: none
+    .SelectedCourse
+        position: relative
+        margin-top: 10vh
+        max-width: 80%
+        min-height: 20vh
+        height: auto
+        padding-top: 3vh
+        margin-bottom: 3vh
+    .SelectedCourseInfo
+        max-width: 95% 
+        width: 100% 
+        margin: 0 auto
+        margin-top: 50px
+        max-height: 80%
+        height: 100%
+    .Courses
+        max-width: 100%
+        width: 100%
+        height: 3500px
+        background-color: #fff0f0
+        margin-bottom: 50px
+    .CoursesHover
+        max-width: 70%
+        width: 100%
+        max-height: 50vh
+        height: auto
+        overflow-y: scroll
+        margin-bottom: 20px
+@media screen and ( max-height: 800px )
+    .CoursesHover
+        max-height: 40vh
+@media screen and ( max-height: 640px )
+    .CoursesHover
+        max-height: 30vh
+    
+
+        
     

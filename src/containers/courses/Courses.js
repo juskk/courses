@@ -89,15 +89,17 @@ const Courses = (props) => {
             <p className={classes.Title}> Here you can find all the courses we can offer you </p>
 
             <div className={classes.SelectedCourse}>
-                <p style={{marginTop: '-70px', fontSize: '20px', fontWeight: '700', letterSpacing: '3px'}}>Information about the chosen course:</p>
-                <div style={{maxWidth: '80%', width: '100%', margin: '0 auto', marginTop: '50px', maxHeight: '80%', height: '100%'}} >
+                <p style={{marginTop: '-10vh', fontSize: '20px', fontWeight: '700', letterSpacing: '3px'}}>Information about the chosen course:</p>
+                <div className={classes.SelectedCourseInfo} >
                     {currentCourseDiv}
                 </div>
             </div>
             
 
-            <div className={classes.Courses} >
-                {courses}
+            <div className={classes.CoursesHover}>
+                <div className={classes.Courses} >
+                    {courses}
+                </div>
             </div>
 
             <div  onClick={ toScroll } className={styles.join(' ')}><p style={{color: 'white', paddingTop:"13px", cursor: 'pointer'}}>UP</p></div>

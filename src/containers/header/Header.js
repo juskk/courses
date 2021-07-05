@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import {connect} from 'react-redux'
 import * as actionCreators from '../../redux/actions/index'
 
+import Auxiliary from '../../hoc/Auxiliary'
 import Modal from '../../components/UI/Modal/Modal'
 import classes from './Header.module.sass'
 import Button from '../../components/UI/button/Button'
@@ -100,22 +101,44 @@ const Header = (props) => {
         </div>
     )
 
-    return (
-        <div className={classes.Header}>
-            <div className={classes.Container}>
-                <div className={classes.HeaderPart}>
-                    <p className={classes.HeaderImg} >CRɔ</p>
-                    <NavLink exact activeStyle={{color: '#7d91ff'}} className={classes.HeaderLink}  to="/">info</NavLink>
-                    <NavLink activeStyle={{color: '#7d91ff'}} className={classes.HeaderLink}  to="/courses">courses</NavLink>
-                    { props.idToken ? <NavLink activeStyle={{color: '#7d91ff'}} className={classes.HeaderLink} to="/menu">menu</NavLink> : null }
-                </div>
+    const [smallHeaderInfo, setSmallHeaderInfo] = React.useState(true);
 
-                {menu}
+    let smallHeaderStyles = [classes.SmallContainer]
+    if (smallHeaderInfo) smallHeaderStyles.push(classes.Hide)
+    else smallHeaderStyles.push(classes.Show)
+
+    return (
+        <Auxiliary>
+            <div className={classes.Header}>
+                <div className={classes.Container}>
+                    <div className={classes.HeaderPart}>
+                        <p className={classes.HeaderImg} >CRɔ</p>
+                        <NavLink exact activeStyle={{color: '#7d91ff'}} className={classes.HeaderLink}  to="/">info</NavLink>
+                        <NavLink activeStyle={{color: '#7d91ff'}} className={classes.HeaderLink}  to="/courses">courses</NavLink>
+                        { props.idToken ? <NavLink activeStyle={{color: '#7d91ff'}} className={classes.HeaderLink} to="/menu">menu</NavLink> : null }
+                    </div>
+
+                    {menu}
+                </div>
+            </div>
+            <div onClick={ () => setSmallHeaderInfo(prev => !prev) } className={classes.SmallHeader}>
+                <p style={{zIndex: '3000', position: 'relative', backgroundColor: 'black'}} className={classes.SmallHeaderImg} >CRɔ</p>
+                <div className={smallHeaderStyles.join(' ')}>
+                    <div style={{paddingTop: '30px'}} className={classes.SmallHeaderPart}>
+                        <NavLink exact activeStyle={{color: '#7d91ff'}} className={classes.HeaderLink}  to="/">info</NavLink>
+                        <NavLink activeStyle={{color: '#7d91ff'}} className={classes.HeaderLink}  to="/courses">courses</NavLink>
+                        { props.idToken ? <NavLink activeStyle={{color: '#7d91ff'}} className={classes.HeaderLink} to="/menu">menu</NavLink> : null }
+                    </div>
+
+                    <div style={{padding: '50px 0'}}>
+                        {menu}
+                    </div>
+                </div>
             </div>
             <Modal clicked={ () => props.onAuth() } show={props.auth}>
-                {modal}
+                        {modal}
             </Modal>
-        </div>
+        </Auxiliary>
     )
 }
 

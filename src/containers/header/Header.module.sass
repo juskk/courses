@@ -4,6 +4,18 @@
     width: 100%
     margin: 0 auto
     box-shadow: 0px 3px 3px #000000
+.SmallHeader
+    z-index: 100
+    top: 0
+    left: 0
+    position: relative
+    background-color: black
+    box-shadow: 0px 3px 3px #000000
+    display: none
+    max-width: 100%
+    width: 100%
+    height: 60px
+    
 .Container
     max-width: 1350px
     width: 100%
@@ -12,6 +24,15 @@
     display: flex
     justify-content: space-between
     align-items: center
+.SmallContainer
+    margin-top: -20px
+    z-index: 100
+    max-width: 100%
+    width: 100%
+    height: 150px
+    background-color: black
+    transition: .8s all
+    box-shadow: 0px 3px 3px #000000
 
 .HeaderImg
     font-size: 37px
@@ -20,13 +41,21 @@
     margin-right: 40px
     margin-bottom: 7px
     text-transform: uppercase
+.SmallHeaderImg
+    font-size: 37px
+    font-weight: 1000
+    color: white
+    text-transform: uppercase
 
 
 .HeaderPart
+    margin: auto
     padding: 0 40px
     display: flex
     align-items: center
     height: 100%
+
+
 
 .HeaderLink
     color: white
@@ -69,3 +98,20 @@
 @media (max-width: 600px)
     .Header
         display: none
+    .SmallHeader
+        display: block
+    .HeaderPart
+        margin: auto
+        max-width: 100%
+        width: 100%
+        margin: 0 auto
+        padding: 0 40px
+        display: flex
+        align-items: center
+        justify-content: center
+        height: 40%
+
+    .Hide
+        transform: translateY(-100%)
+    .Show
+        transform: translateY(0)
